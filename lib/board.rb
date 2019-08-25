@@ -25,9 +25,11 @@ class Board
   end
 
   def full?
-    cells.each do |cell|
-      if (cell == "" || cell == " ")
-        return false
+    cells.all? do |index|
+      if index == "X" || index == "O"
+        true
+      else
+        false
       end
     end
   end

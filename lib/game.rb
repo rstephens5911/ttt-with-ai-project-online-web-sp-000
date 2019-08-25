@@ -14,6 +14,7 @@ class Game
     [2,4,6]   # R to L diagonal
   ]
 
+
   def initialize(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
       @board = board
     @player_1 = player_1
@@ -24,5 +25,41 @@ class Game
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
   end
+
+  def won?
+    WIN_COMBINATIONS.detect do |element|
+      @board.cells[element[0]] == @board.cells[element[1]] &&
+      @board.cells[element[1]] == @board.cells[element[2]]
+    end
+  end
+
+  def draw?
+    !won? && @board.full?
+  end
+
+  def over?
+    draw? || won?
+  end
+
+  def winner
+    array = []
+    array = won?
+    if
+      @board.cells[array[0]] == "X"
+      "X"
+    elsif
+      @board.cells[array[0]] == "O"
+      "O"
+    else
+      nil
+    end
+  end
+
+  def turn
+
+  move
+
+  end
+
 
 end

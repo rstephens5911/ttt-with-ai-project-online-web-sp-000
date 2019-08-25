@@ -4,6 +4,7 @@ module Players
     def move(user_input)
       puts "choose a position (1-9):"
       user_input = gets.chomp
+      return user_input
     end
 
   end
