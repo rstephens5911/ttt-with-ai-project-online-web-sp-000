@@ -1,10 +1,9 @@
 module Players
   class Human < Player
 
-    def move(user_input)
+    def move(board)
       puts "choose a position (1-9):"
-      user_input = gets.strip
-      return user_input
+    gets.strip
     end
 
   end
