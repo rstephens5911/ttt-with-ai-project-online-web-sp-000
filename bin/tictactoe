@@ -5,23 +5,21 @@ require_relative '../config/environment'
 puts "Tic Tac Toe"
 
 def start
+  puts "Choose players (0,1,or 2)"
   input = gets.strip
-
-    puts "Choose players (0,1,or 2)"
 
     case input
     when "0"
-      puts "0"
-      Game.new(Player::Computer.new("X"), Player::Computer.new("O")).play
+      Game.new(Players::Computer.new("X"), Players::Computer.new("O")).play
     when "1"
-      puts "1"
-      Game.new(Player::Human.new("X"), Player::Computer("O")).play
+      Game.new(Players::Human.new("X"), Players::Computer("O")).play
     when "2"
-      puts "2"
-      Game.new(Player::Human.new("X"), Player::Human.new("O")).play
+      Game.new(Players::Human.new("X"), Players::Human.new("O")).play
     when "exit"
-
+      puts "Goodbye!"
+    else
+      puts "invalid entry"
+      start
     end
   end
-end
-start
+  start
