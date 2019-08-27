@@ -12,7 +12,7 @@ def start
     when "0"
       Game.new(Players::Computer.new("X"), Players::Computer.new("O")).play
     when "1"
-      Game.new(Players::Human.new("X"), Players::Computer("O")).play
+      Game.new(Players::Human.new("X"), Players::Computer.new("O")).play
     when "2"
       Game.new(Players::Human.new("X"), Players::Human.new("O")).play
     when "exit"
