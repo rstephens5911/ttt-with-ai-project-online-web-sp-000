@@ -4,8 +4,7 @@ class Board
 
 
   def initialize
-    @board = board
-    @cells =  [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    reset!
   end
 
   def reset!
@@ -21,7 +20,8 @@ class Board
   end
 
   def position(input)
-    cell = @cells[input.to_i - 1]
+    input = input.to_i
+    cell = @cells[input - 1]
   end
 
   def full?
@@ -44,28 +44,17 @@ class Board
     count
   end
 
-  def taken?(position)
-    if (cells[position.to_i - 1] == "X" || cells[position.to_i - 1] == "O")
-      true
-    else
-      false
-    end
+  def taken?(input)
+    @cells[input.to_i - 1] != "" && @cells[input.to_i - 1] != " "
   end
 
-  def valid_move?(user_input)
-    user_input = user_input.to_i
-    if (user_input > 0 && user_input < 10 && !taken?(user_input))
-      true
-    end
+  def valid_move?(input)
+    !taken?(input) && input.to_i.between?(1,9)
   end
 
-  def update(input, token)
-    if turn_count % 2 == 0
-      token = "X"
-    else
-      token = "O"
-    end
-    @cells[input.to_i - 1] = token
+  def update(input, player)
+    input = input.to_i
+    cells[input - 1] = player.token
   end
 
 end
