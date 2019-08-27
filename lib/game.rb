@@ -27,7 +27,7 @@ class Game
   end
 
   def won?
-    WIN_COMBINATIONS.each do |element|
+    WIN_COMBINATIONS.detect do |element|
       @board.cells[element[0]] == @board.cells[element[1]] &&
       @board.cells[element[1]] == @board.cells[element[2]] &&
       (@board.cells[element[0]] == "X" || @board.cells[element[0]] == "O")
@@ -43,7 +43,7 @@ class Game
   end
 
   def winner
-    @board.cells[won?[0]]
+    @board.cells[won?[0]] if won?
   end
 
   def turn
@@ -62,7 +62,7 @@ class Game
       turn
     end
     if draw?
-      puts "Cats Game!"
+      puts "Cat's Game!"
     elsif won?
       puts "Congratulations #{winner}!"
     end
