@@ -1,3 +1,4 @@
+
 class Game
   attr_accessor :board, :player_1, :player_2
 
@@ -19,7 +20,6 @@ class Game
       @board = board
     @player_1 = player_1
     @player_2 = player_2
-
   end
 
   def current_player
@@ -27,9 +27,10 @@ class Game
   end
 
   def won?
-    WIN_COMBINATIONS.detect do |element|
+    WIN_COMBINATIONS.each do |element|
       @board.cells[element[0]] == @board.cells[element[1]] &&
-      @board.cells[element[1]] == @board.cells[element[2]]
+      @board.cells[element[1]] == @board.cells[element[2]] &&
+      (@board.cells[element[0]] == "X" || @board.cells[element[0]] == "O")
     end
   end
 
@@ -42,17 +43,7 @@ class Game
   end
 
   def winner
-    array = []
-    array = won?
-    if
-      @board.cells[array[0]] == "X"
-      "X"
-    elsif
-      @board.cells[array[0]] == "O"
-      "O"
-    else
-      nil
-    end
+    @board.cells[won?[0]]
   end
 
   def turn
@@ -64,7 +55,17 @@ class Game
     else
       turn
     end
+  end
 
+  def play
+    until over?
+      turn
+    end
+    if draw?
+      puts "Cats Game!"
+    elsif won?
+      puts "Congratulations #{winner}!"
+    end
   end
 
 end
