@@ -35,7 +35,7 @@ class Game
   end
 
   def draw?
-    !won? && @board.full?
+    !won? && board.full?
   end
 
   def over?
@@ -47,11 +47,13 @@ class Game
   end
 
   def turn
-    puts "select a space: (1-9)"
-    move = current_player.move(@board)
-    if board.valid_move?(move) then
-      board.update(move, current_player)
+    puts "#{current_player.token}'s turn."
+    input = current_player.move(board).to_i
+    if board.valid_move?(input.to_s)
+      board.update(input, current_player)
       board.display
+    elsif input.between?(1,9) == false
+      turn
     else
       turn
     end
@@ -61,11 +63,12 @@ class Game
     until over?
       turn
     end
-    if draw?
-      puts "Cat's Game!"
-    elsif won?
+    if won?
       puts "Congratulations #{winner}!"
+    else
+      puts "Cat's Game!"
     end
   end
+
 
 end

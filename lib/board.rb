@@ -45,11 +45,13 @@ class Board
   end
 
   def taken?(input)
-    @cells[input.to_i - 1] != "" && @cells[input.to_i - 1] != " "
-  end
+    input = input.to_i - 1
+    (@cells[input] == "" || @cells[input] == " " || @cells[input] == nil) ?
+      false : true
+    end
 
-  def valid_move?(input)
-    !taken?(input) && input.to_i.between?(1,9)
+  def valid_move?(index)
+    index.to_i.between?(1,9) && !taken?(index)
   end
 
   def update(input, player)
