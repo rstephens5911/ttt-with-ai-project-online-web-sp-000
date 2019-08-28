@@ -6,10 +6,11 @@ module Players
         "5"
       else board.cells.each_with_index do |cell, index|
         if cell == " "
-          index + 1
+          sleep(1)
+          return index + 1
         end
       end
     end
   end
-end
+ end
 end
