@@ -12,6 +12,7 @@ module Players
         "6"
       elsif board.position("8") == " "
         "8"
+      end
 
       # else board.cells.each_with_index do |cell, index|
       #   if cell == " "
