@@ -5,7 +5,7 @@ module Players
       if board.position("5") == " "
         return "5"
       else
-        case 
+        case
         when board.taken?(1) && !board.take?(9)
           9
         when board.taken?(9) && !board.taken?(1)
