@@ -4,14 +4,14 @@ module Players
     def move(board)
       if board.position("5") == " "
         return "5"
-      elsif board.position("0") == " "
+      elsif board.position("1") == " "
           return "0"
-      elsif board.position("2") == " "
-        return "2"
-      elsif board.position("6") == " "
-          return "6"
-      elsif board.position("8") == " "
-          return "8"
+      elsif board.position("3") == " "
+        return "3"
+      elsif board.position("7") == " "
+          return "7"
+      elsif board.position("9") == " "
+          return "9"
       end
     end
   end
