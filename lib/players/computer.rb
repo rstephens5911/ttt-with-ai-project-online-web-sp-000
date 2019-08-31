@@ -50,7 +50,7 @@ module Players
       end
     end
 
-    def blocker
+    def block
       winning_row = WIN_COMBINATIONS.find do |combo|
         (board.cells[combo[0]] == other && board.cells[combo[1]] == other && board.cells[combo[2]] == " ") ||
           (board.cells[combo[0]] == other && board.cells[combo[2]] == other && board.cells[combo[1]] == " ") ||
