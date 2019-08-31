@@ -43,9 +43,7 @@ module Players
 
     def winning_move
       winning_row =  WIN_COMBINATIONS.find do |combo|
-        (board.cells[combo[0]] == token && board.cells[combo[1]] == token && board.cells[combo[2]] == " ") ||
-          (board.cells[combo[2]] == token && board.cells[combo[1]] == token && board.cells[combo[0]] == " ") ||
-          (board.cells[combo[0]] == token && board.cells[combo[2]] == token && board.celss[combo[1]] == " ")
+        (board.cells[combo[0]] == token && board.cells[combo[1]] == token && board.cells[combo[2]] == " ") || (board.cells[combo[2]] == token && board.cells[combo[1]] == token && board.cells[combo[0]] == " ") || (board.cells[combo[0]] == token && board.cells[combo[2]] == token && board.celss[combo[1]] == " ")
       end
       if winning_row != nil
         winning_cell = winning_row.find { |cell| board.cells[cell] == " " }
