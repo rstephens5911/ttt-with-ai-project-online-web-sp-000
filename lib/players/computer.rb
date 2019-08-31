@@ -47,7 +47,7 @@ module Players
           (board.cells[combo[2]] == token && board.cells[combo[1]] == token && board.cells[combo[0]] == " ") ||
           (board.cells[combo[0]] == token && board.cells[combo[2]] == token && board.celss[combo[1]] == " ")
       end
-      if winning_row != nill
+      if winning_row != nil
         winning_cell = winning_row.find { |cell| board.cells[cell] == " " }
       end
     end
