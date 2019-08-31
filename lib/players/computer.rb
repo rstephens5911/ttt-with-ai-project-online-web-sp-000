@@ -13,13 +13,12 @@ module Players
       elsif board.position("8") == " "
         "8"
       end
+    end
+  end
+end
 
       # else board.cells.each_with_index do |cell, index|
       #   if cell == " "
       #     sleep(1)
       #     return index + 1
-      #   end
-      end
-    end
-  end
- end
+
