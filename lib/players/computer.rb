@@ -3,15 +3,15 @@ module Players
 
     def move(board)
       if board.position("5") == " "
-        "5"
+        return "5"
       elsif board.position("0") == " "
-        "0"
+          return "0"
       elsif board.position("2") == " "
-        "2"
+        return "2"
       elsif board.position("6") == " "
-        "6"
+          return "6"
       elsif board.position("8") == " "
-        "8"
+          return "8"
       end
     end
   end
