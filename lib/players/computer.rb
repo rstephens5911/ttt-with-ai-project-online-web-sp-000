@@ -60,6 +60,33 @@ module Players
         winning_cell = winning_row.find { |cell| board.cells[cell] == " " }
       end
     end
+
+    def center?
+      board.cells[4] = " "
+    end
+
+    def corners 
+      CORNERS.shuffle!
+    end
+
+    def opposite_corner
+      case 
+      when board.taken?(1) && !board.taken?(9)
+        9
+      when board.taken?(9) && !board.taken?(1)
+        1
+      when board.taken?(3) && !board.taken?(7)
+        7
+      when board.taken?(7) && !board.taken(3)
+        3
+      else
+        nil
+      end
+    end
+  end
+end
+    
+  
       # else board.cells.each_with_index do |cell, index|
       #   if cell == " "
       #     sleep(1)
