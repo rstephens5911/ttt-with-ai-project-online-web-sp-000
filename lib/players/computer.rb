@@ -65,12 +65,12 @@ module Players
       board.cells[4] = " "
     end
 
-    def corners 
+    def corners
       CORNERS.shuffle!
     end
 
     def opposite_corner
-      case 
+      case
       when board.taken?(1) && !board.taken?(9)
         9
       when board.taken?(9) && !board.taken?(1)
@@ -85,8 +85,8 @@ module Players
     end
   end
 end
-    
-  
+
+
       # else board.cells.each_with_index do |cell, index|
       #   if cell == " "
       #     sleep(1)
