@@ -85,6 +85,7 @@ module Players
     end
   end
 end
+end
 
 
       # else board.cells.each_with_index do |cell, index|
