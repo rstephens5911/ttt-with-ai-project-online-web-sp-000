@@ -21,4 +21,3 @@ end
       #   if cell == " "
       #     sleep(1)
       #     return index + 1
-
