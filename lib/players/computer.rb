@@ -1,7 +1,7 @@
 module Players
   class Computer < Player
 
-    attr_accessor :board
+    attr_accessor :board, :cells
 
     WIN_COMBINATIONS = [
       [0,1,2],  # Top row
