@@ -19,6 +19,7 @@ module Players
     CORNERS = [0,2,6,8]
 
     def move(board)
+      @board = board
       case
       when winning_move != nil
         next_input = winning_move + 1
