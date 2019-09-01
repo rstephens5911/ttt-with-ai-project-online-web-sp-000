@@ -73,7 +73,7 @@ module Players
     end
 
     def corner
-      corner.find { |corner| board.cells[corner] == " " }
+      corners.find { |corner| board.cells[corner] == " " }
     end
 
     def opposite_corner
