@@ -72,7 +72,7 @@ module Players
       CORNERS.shuffle!
     end
 
-    def corner 
+    def corner
       corner.find { |corner| board.cells[corner] == " " }
     end
 
