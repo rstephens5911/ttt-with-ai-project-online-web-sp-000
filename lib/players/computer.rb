@@ -84,7 +84,7 @@ module Players
         1
       when board.taken?(3) && !board.taken?(7)
         7
-      when board.taken?(7) && !board.taken(3)
+      when board.taken?(7) && !board.taken?(3)
         3
       else
         nil
