@@ -72,6 +72,10 @@ module Players
       CORNERS.shuffle!
     end
 
+    def corner 
+      corner.find { |corner| board.cells[corner] == " " }
+    end
+
     def opposite_corner
       case
       when board.taken?(1) && !board.taken?(9)
