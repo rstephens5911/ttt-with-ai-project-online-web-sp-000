@@ -26,7 +26,7 @@ module Players
       when block != nil
         next_input = block + 1
       when center?
-        next_input = 4
+        next_input = 5
       when opposite_corner != nil && board.taken?(opposite_corner) == false
         next_input = corner + 1
       else
