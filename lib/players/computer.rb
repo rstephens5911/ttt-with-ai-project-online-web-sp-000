@@ -1,3 +1,7 @@
+# https://github.com/achasveachas/Tic-Tac-Toe-with-AI/blob/master/lib/players/computer.rb
+# my version was based on this version, except my computer player would get stuck in
+# an infinite loop if the human player chose position 5 (center) for the first move.
+# I worked on the issue for days but could not uncover my error.
 module Players
   class Computer < Player
 
